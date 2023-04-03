@@ -1,5 +1,5 @@
-# harness_assembly
-Repository of ROS packages for wire harness assembly task
+# wiring_harness_manufacturing
+Repository of ROS packages for wiring harness manufacturing task
 ## task_control
 Package containing the "master" node, i.e., the one reading the sequence of operations from a file and sending the corresponding goal to the servers
 ## trajectory_control
