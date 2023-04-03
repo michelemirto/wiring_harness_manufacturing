@@ -1,0 +1,12 @@
+# Goal
+float64 vel_max
+float64 tc
+float64 t_stop
+float64 indicator_threshold
+float64 distance #m
+---
+# Result
+bool success
+
+---
+# Feedback

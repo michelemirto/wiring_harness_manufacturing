@@ -1,0 +1,181 @@
+plate:
+  mesh: &plate_mesh "package://scene_creation/meshes/plate.stl"
+  z_tf: &plate_z_tf 0.020 # m
+
+clip:
+  mesh: &clip_mesh "package://scene_creation/meshes/clip-lowres.stl"
+  z_tf: &clip_z_tf 0.03889 # m
+
+clip_rect:
+  mesh: &clip_rect_mesh "package://scene_creation/meshes/clip_rect-lowres.stl"
+  z_tf: &clip_rect_z_tf 0.03889 # m
+
+# lowclip:
+#   mesh: &lowclip_mesh "package://scene_creation/meshes/lowclip.stl"
+#   z_tf: &clip_rect_z_tf 0.03889 # m
+
+holder_LU10:
+  mesh: &holder_LU10_mesh "package://scene_creation/meshes/10poles-lowres.stl"
+  x_tf: &holder_LU10_x_tf -0.015 # m
+  y_tf: &holder_LU10_y_tf -0.0015 # m
+  z_tf: &holder_LU10_z_tf 0.0615 # m
+  length: 0.03 # m
+
+holder_LU11:
+  mesh: &holder_LU11_mesh "package://scene_creation/meshes/11poles-lowres.stl"
+  x_tf: &holder_LU11_x_tf -0.015 # m
+  y_tf: &holder_LU11_y_tf -0.0015 # m
+  z_tf: &holder_LU11_z_tf 0.0625 # m
+  length: 0.03 # m
+
+holder_MO6:
+  mesh: &holder_MO6_mesh "package://scene_creation/meshes/6poles-lowres.stl"
+  x_tf: &holder_MO6_x_tf -0.0165 # m
+  z_tf: &holder_MO6_z_tf 0.048 #0.053 # m
+  length: 0.047 # m
+
+pole:
+  mesh: &pole_mesh "package://scene_creation/meshes/pole.stl"
+  z_tf: &pole_z_tf 0.075 # m
+
+scene:
+- frame_id: "base"
+  mesh: *plate_mesh
+  child_frame_id: "breadboard"
+  x: -0.2039 # position in x
+  y: -0.6804 # position in y
+  z: *plate_z_tf # position in z (tf)
+  r_x: 0.0
+  r_y: 0.0
+  r_z: 0.0 # rotation about z [deg]
+- frame_id: "breadboard"
+  mesh: *holder_LU10_mesh
+  child_frame_id: "holder_LU10"
+  x: 0.55 # position in x
+  y: 0.1 #0.225 # position in y
+  z: *holder_LU10_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: -15.0 # rotation about z [deg]
+  x_tf: *holder_LU10_x_tf # position in x
+  y_tf: *holder_LU10_y_tf # position in y
+  z_tf: *holder_LU10_z_tf # position in z
+- frame_id: "breadboard"
+  mesh: *holder_LU11_mesh
+  child_frame_id: "holder_LU11"
+  x: 0.475 # position in x
+  y: 0.025 #0.15 # position in y
+  z: *holder_LU11_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: 0.0 # rotation about z [deg]
+  x_tf: *holder_LU11_x_tf # position in x
+  y_tf: *holder_LU11_y_tf # position in y
+  z_tf: *holder_LU11_z_tf # position in z
+- frame_id: "breadboard"
+  mesh: *holder_MO6_mesh
+  child_frame_id: "holder_MO6"
+  x: 0.05 # position in x
+  y: 0.075 #0.20 # position in y
+  z: *holder_MO6_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: -135.0 # rotation about z [deg]
+  x_tf: *holder_MO6_x_tf # position in x
+  y_tf: 0.0 # position in y
+  z_tf: *holder_MO6_z_tf # position in z
+- frame_id: "breadboard"
+  mesh: *clip_rect_mesh
+  child_frame_id: "clip1"
+  x: 0.4542 # position in x
+  y: 0.1 #0.225 # position in y
+  z: *clip_rect_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: 0.0 # rotation about z [deg]
+- frame_id: "breadboard"
+  mesh: *clip_rect_mesh
+  child_frame_id: "clip2"
+  x: 0.3375 # position in x
+  y: 0.1 #0.225 # position in y
+  z: *clip_rect_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: 0.0 # rotation about z [deg]
+- frame_id: "breadboard"
+  mesh: *clip_rect_mesh
+  child_frame_id: "clip3"
+  x: 0.2295 # position in x
+  y: 0.1 #0.225 # position in y
+  z: *clip_rect_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: 0.0 # rotation about z [deg]
+- frame_id: "breadboard"
+  child_frame_id: "virtual_clip"
+  x: 0.2295 # position in x
+  y: 0.1 # position in y
+  z: *clip_rect_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: -35.0 # rotation about z [deg]
+- frame_id: "breadboard"
+  mesh: *clip_rect_mesh
+  child_frame_id: "clip4"
+  x: 0.1545 #0.1705 # position in x
+  y: 0.1 #0.225 # position in y
+  z: *clip_rect_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: 0.0 # rotation about z [deg]
+- frame_id: "breadboard"
+  mesh: *clip_mesh
+  child_frame_id: "clip5"
+  x: 0.1 # position in x
+  y: 0.05 #0.175 # position in y
+  z: *clip_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: 45.0 # rotation about z [deg]
+- frame_id: "breadboard"
+  child_frame_id: "virtual_clip2"
+  x: 0.22 # position in x
+  y: 0.255 # position in y
+  z: *clip_rect_z_tf # position in z
+  r_x: 180.0
+  r_y: 0.0
+  r_z: -45.0 # rotation about z [deg]
+# - frame_id: "breadboard"
+#   mesh: *lowclip_mesh
+#   child_frame_id: "miniclip"
+#   x: 0.40 # position in x
+#   y: 0.025 # position in y
+#   z: 0.05389 # position in z
+#   r_x: 180.0
+#   r_y: 0.0
+#   r_z: 0.0 # rotation about z [deg]
+- frame_id: "base"
+  child_frame_id: "MO6"
+  x: -0.793 # position in x
+  y: 0.098 # position in y
+  z: 0.558 # position in z
+  r_x: 0.0
+  r_y: -90
+  r_z: 0.0 # rotation about z [deg]
+- frame_id: "base"
+  child_frame_id: "LU11"
+  x: -0.799 # position in x
+  y: 0.153 # position in y
+  z: 0.558 # position in z
+  r_x: 0.0
+  r_y: -90
+  r_z: 0.0 # rotation about z [deg]
+- frame_id: "base"
+  child_frame_id: "LU10"
+  x: -0.798 # position in x
+  y: 0.208 # position in y
+  z: 0.558 # position in z
+  r_x: 0.0
+  r_y: -90
+  r_z: 0.0 # rotation about z [deg]
+

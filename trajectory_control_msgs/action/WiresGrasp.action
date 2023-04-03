@@ -1,0 +1,12 @@
+# Goal
+string connector_name
+int8 num_wires
+float32 offset
+float32 velocity_scale
+
+---
+# Result
+bool success
+
+---
+# Feedback

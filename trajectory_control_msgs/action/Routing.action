@@ -1,0 +1,16 @@
+# Goal
+string current_frame
+string next_frame
+float64 z_offset
+float64 x_offset
+float64 z_rotation
+float64 velocity_scale
+int8 direction #1 for LU10 and LU11, -1 for MO6
+int8 lateral #1 for lateral movement to +y, -1 to -y, 0 no lateral movement
+bool up_hole #routing stops at first hole if true
+---
+# Result
+bool success
+
+---
+# Feedback

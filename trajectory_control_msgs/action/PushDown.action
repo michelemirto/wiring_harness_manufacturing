@@ -1,0 +1,12 @@
+# Goal
+string frame
+float64 z_offset
+float64 velocity_scale
+int8 direction #1 for LU10 and LU11, -1 for MO6
+int8 clip_side # 1 = after, -1 = before
+---
+# Result
+bool success
+
+---
+# Feedback

@@ -1,0 +1,14 @@
+# Define the goal
+string pick_frame
+string place_frame
+float32 holder_length
+float32 connector_width
+float32 offset # distance from the holder
+float32 velocity_scale
+
+---
+# Define the result
+bool success
+
+---
+# Define a feedback message

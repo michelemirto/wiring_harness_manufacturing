@@ -1,0 +1,35 @@
+components:
+  LU10:
+    type: connector
+    model: LUMBERG
+    wires_num: 10
+    length: 27.4 # mm
+    pitch: 2.5 # mm
+    ending_gap: 1.58 # mm
+    holes_diameter: 1.75 # mm
+    width: 8 # mm
+  LU11:
+    type: connector
+    model: LUMBERG
+    wires_num: 11
+    length: 29.9 # mm
+    pitch: 2.5 # mm
+    ending_gap: 1.58 # mm
+    holes_diameter: 1.75 # mm
+    width: 8 # mm
+  MO6:
+    type: connector
+    model: MOLEX
+    width: 6 # mm
+  holder_LU10:
+    type: connector_holder
+    connector: LU10
+    length: 0.025 # m
+  holder_LU11:
+    type: connector_holder
+    connector: LU11
+    length: 0.025 # m
+  holder_MO6:
+    type: connector_holder
+    connector: MO6
+    length: 0.047 # m

@@ -1,0 +1,81 @@
+####
+# op_codes:
+# - PC = place connector
+# - R = routing
+# - G = wire grasp
+# - S = wire separation
+# - PD = push down
+# - T = tend wires
+
+sequence:
+####### MO6 #######
+  - type: PC # place MO6 connector
+    connector: MO6
+    vel_max: -0.01 #1 cm/s
+    indicator_threshold: 0.3
+  # - type: G
+  #   pick_from: MO6
+  #   wires: -1
+  - type: R # routing
+    pick_from: MO6
+    up_hole: False
+    clips: [clip4]
+    offset: [0.14]
+    rotation: [0.0]
+    lateral: [0]
+  - type: PD
+    clips: [clip2, clip3, clip4]
+    side: [1, -1, 1]
+
+####### LU11 #######
+  - type: PC # place LU11 connector
+    connector: LU11
+    vel_max: -0.01 #1 cm/s
+    indicator_threshold: 0.35
+  - type: G
+    pick_from: LU11
+    wires: 3
+  - type: R # routing
+    pick_from: LU11
+    up_hole: True
+    clips: [clip2,clip3,clip5]
+    offset: [0.0,0.08,0.0]
+    rotation: [20.0,0.0,0.0]
+    lateral: [1,0,0]
+  - type: PD
+    clips: [clip5, clip4, clip3, clip2]
+    side: [-1, -1, -1, 1]
+
+####### LU10 #######
+  - type: PC # place LU10 connector
+    connector: LU10
+    vel_max: -0.01 #1 cm/s
+    indicator_threshold: 0.4
+  # - type: G
+  #   pick_from: LU10
+  #   wires: -1
+  - type: R # routing
+    pick_from: LU10
+    up_hole: True
+    clips: [clip1,clip2,virtual_clip]
+    offset: [0.0,0.0,0.0]
+    rotation: [25.0,25.0,0.0]
+    lateral: [-1,-1,0]
+  - type: PD
+    clips: [clip3, clip2]
+    side: [-1, 1]
+  - type: S # separation
+    pick_from: LU10
+    wires: 2 # means from 1 to 2
+    clips: [clip1,clip2,clip3]
+  - type: R # routing
+    pick_from: clip3
+    up_hole: True
+    clips: [clip4,clip5]
+    offset: [0.0,0.0]
+    rotation: [0.0,0.0]
+    lateral: [-1,0]
+  - type: PD
+    clips: [clip5, clip4, clip3, clip2, clip1]
+    side: [-1, -1, -1, -1, 1]
+

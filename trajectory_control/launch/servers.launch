@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node name="pickplace_server" pkg="trajectory_control" type="connector_pickplace.py" output="screen"/>
+    <node name="graspwires_server" pkg="trajectory_control" type="grasp_wires.py" output="screen"/>
+    <node name="pushdown_server" pkg="trajectory_control" type="push_down.py" output="screen"/>
+    <node name="routing_server" pkg="trajectory_control" type="routing.py" output="screen"/>
+    <node name="separatewires_server" pkg="trajectory_control" type="separate_wires.py" output="screen"/>
+
+</launch>

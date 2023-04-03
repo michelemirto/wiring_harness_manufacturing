@@ -1,0 +1,4 @@
+sensors:
+  tactile:
+    serialport: ttyUSB3
+    name: S003

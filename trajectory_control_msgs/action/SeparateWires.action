@@ -1,0 +1,10 @@
+# Goal
+string next_frame
+float64 velocity_scale
+int8 direction #1 for LU10 and LU11, -1 for MO6
+---
+# Result
+bool success
+
+---
+# Feedback
